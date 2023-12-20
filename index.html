@@ -5,10 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./slider.css">
 
 </head>
 <body>
     
+    <div class="calculator">
+
+        <div class="title">
+            <img src="./logo.svg" alt="logo">
+            <div class = 'toggle-switch'>
+                <!-- using code from saba -->
+                <label>
+                    <input type = 'checkbox'>
+                    <span class = 'slider'></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="screen">
+            <p id="previousInput" >0</p>
+            <p id="result">0</p>
+        </div>
+
+        <div class="keypad">
+
+            <div class="row">
+                <div class="key, action" id="cancel">AC</div>
+                <div class="key, action" id="sign">±</div>
+                <div class="key, action" id="percent">%</div>
+                <div class="key, action" id="divide">÷</div>
+            </div>
+
+            <div class="row">
+                <div class="key, number" id="">7</div>
+                <div class="key, number" id="">8</div>
+                <div class="key, number" id="">9</div>
+                <div class="key, action" id="multiply">×</div>
+            </div>
+
+            <div class="row">
+                <div class="key, number" id="4">4</div>
+                <div class="key, number" id="5">5</div>
+                <div class="key, number" id="6">6</div>
+                <div class="key, action" id="substract">-</div>
+            </div>
+
+            <div class="row">
+                <div class="key, number" id="1">1</div>
+                <div class="key, number" id="2">2</div>
+                <div class="key, number" id="3">3</div>
+                <div class="key, action" id="add">+</div>
+            </div>
+
+            <div class="row">
+                <div class="key, number" id="dot"></div>
+                <div class="key, number" id="0">0</div>
+                <div class="key, number" id="back">C</div>
+                <div class="key, equal" id="equal">=</div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
     <script type="text/javascript" src="./app.js"></script>
 
 

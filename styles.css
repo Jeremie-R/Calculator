@@ -1,1 +1,6 @@
 /* main stiles file */
+
+* {
+    padding: 0;
+    margin: 0;
+}
