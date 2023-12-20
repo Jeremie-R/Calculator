@@ -1,1 +1,17 @@
 /* light mode */
+
+body {
+    background: #DBE2F1;
+}
+
+.calculator {
+    border: 10px solid #FFF;
+    background: #F2F3F7;
+}
+
+.screen {
+    border: 4px solid #F2F3F7;
+    background: #C1D0B5;
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.10), -4px -4px 16px 0px #FFF, 4px 4px 16px 0px rgba(0, 0, 0, 0.15) inset, -4px -4px 16px 0px rgba(255, 255, 255, 0.60) inset;
+}
+

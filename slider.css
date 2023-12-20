@@ -19,6 +19,7 @@ https://codepen.io/alvarotrigo/pen/zYPydpB
 
 .toggle-switch {
     position: relative;
+    margin-top: -32px;
     width: 64px;
   }
   
