@@ -76,7 +76,15 @@ body {
     width: 3.25rem;
     height: 3.25rem;
     border-radius: 100%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
 }
+
 
 
 
