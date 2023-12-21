@@ -97,3 +97,7 @@ body {
     border: 1px solid #FF97E2;
     background: #FFBAEC;
 }
+
+a {
+    color: aquamarine;
+}

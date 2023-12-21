@@ -5,8 +5,8 @@ https://codepen.io/alvarotrigo/pen/zYPydpB
 
 */
 :root {
-    --light: #d8dbe0;
-    --dark: #28292c;
+    --light: #fff;
+    --dark: #000;
     --link: rgb(27, 129, 112);
     --link-hover: rgb(24, 94, 82);
   }
@@ -67,3 +67,5 @@ https://codepen.io/alvarotrigo/pen/zYPydpB
     background-color: var(--dark);
     box-shadow: none;
   }
+
+  
