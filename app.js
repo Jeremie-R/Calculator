@@ -94,7 +94,7 @@ let back = document.getElementById("back");
 back.addEventListener('click', () => { backClicked(); } );
 
 let equal = document.getElementById("equal");
-equal.addEventListener('click', () => { equalCliced(); } );
+equal.addEventListener('click', () => { equalClicked(); } );
 
 
 
