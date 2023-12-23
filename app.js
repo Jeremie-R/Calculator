@@ -121,7 +121,7 @@ function percentClicked() {
     console.log('no function yet');
 }
 
-function dividelClicked() {
+function divideClicked() {
     console.log('no function yet');
 }
 
