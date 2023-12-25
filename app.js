@@ -117,7 +117,13 @@ function numberClicked(number) {
 // operator functions
 
 function cancelClicked() {
-    console.log('no function yet');
+    memoryFirstValue = 0.0;
+    memorySign = "";
+    calcArray = [];
+    calcMemory = [];
+
+    previousInput.innerHTML = "";
+    result.innerHTML = "";
 }
 
 function signClicked() {
