@@ -171,7 +171,7 @@ function signClicked() {
     calcArray = [signChanged];
     result.innerHTML = calcArray;
 
-    
+    //i need to add the operator
 
 
 }
