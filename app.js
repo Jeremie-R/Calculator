@@ -166,7 +166,7 @@ function backClicked() {
 
 function signClicked() {
     console.log('no function yet');
-    calcArray = parseFloat(calcArray.join('')) * - 1
+    calcArray = parseInt(calcArray.join('')) * - 1
 }
 
 function percentClicked() {
@@ -196,22 +196,22 @@ function equalClicked() {
 
     if (memorySign === "") {
         // no memory sign stored so we store a value to hold
-        resultat = parseFloat(calcArray.join(''));
+        resultat = parseInt(calcArray.join(''));
     }
 
     // from here we assume there is a sign stored
     if (memorySign === "+") {
-        resultat = memoryFirstValue + parseFloat(calcArray.join(''));
+        resultat = memoryFirstValue + parseInt(calcArray.join(''));
     }
     if (memorySign === "-") {   
-        resultat = memoryFirstValue - parseFloat(calcArray.join(''));
+        resultat = memoryFirstValue - parseInt(calcArray.join(''));
     }
     if (memorySign === "/") {   
-        if (parseFloat(calcArray.join('')) === 0) {
+        if (parseInt(calcArray.join('')) === 0) {
             cancelClicked();
             alert("divide by zero is not posible");
         } else {
-            let realresult = memoryFirstValue / parseFloat(calcArray.join(''));
+            let realresult = memoryFirstValue / parseInt(calcArray.join(''));
             realresult = realresult.toFixed(3);
             let resultString = realresult.toString();
             resultString = resultString.replace(/(\.\d*?[1-9])0+$/g, '$1');
@@ -219,7 +219,7 @@ function equalClicked() {
         }
     }
     if (memorySign === "x") {
-        resultat = memoryFirstValue * pparseFloat(calcArray.join(''));
+        resultat = memoryFirstValue * parseInt(calcArray.join(''));
     }
 
     calcMemory.push(resultat);
