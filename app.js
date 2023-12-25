@@ -3,8 +3,8 @@
 //vairables
 let currentThemeValue = "string";
 
-let memoryFirstValue = 0;
-let resultat = 0;
+let memoryFirstValue = 0.0;
+let resultat = 0.0;
 let memorySign = "";
 let calcMemory = [];
 let calcArray = [];
@@ -77,13 +77,13 @@ let percent = document.getElementById("percent");
 percent.addEventListener('click', () => { percentClicked(); } );
 
 let divide = document.getElementById("divide");
-divide.addEventListener('click', () => { divideClicked(); } );
+divide.addEventListener('click', () => { operatorClicked("/"); } );
 
 let multiply = document.getElementById("multiply");
-multiply.addEventListener('click', () => { multiplyClicked(); } );
+multiply.addEventListener('click', () => { operatorClicked("x"); } );
 
 let substract = document.getElementById("substract");
-substract.addEventListener('click', () => { substractClicked(); } );
+substract.addEventListener('click', () => { operatorClicked("-"); } );
 
 let add = document.getElementById("add");
 add.addEventListener('click', () => { operatorClicked("+"); } );
@@ -159,9 +159,24 @@ function equalClicked() {
     }
 
     // from here we assume there is a sign stored
-
     if (memorySign === "+") {
         resultat = memoryFirstValue + parseInt(calcArray.join(''));
+    }
+    if (memorySign === "-") {   
+        resultat = memoryFirstValue - parseInt(calcArray.join(''));
+    }
+    if (memorySign === "/") {   
+        if (parseInt(calcArray.join('')) === 0) {
+            alert("divide by zero is not posible");
+            cancelClicked();
+        } 
+        else {
+            let realresult = memoryFirstValue / parseInt(calcArray.join(''));
+            resultat = realresult.toFixed(3);
+        }
+    }
+    if (memorySign === "+") {
+        resultat = memoryFirstValue * parseInt(calcArray.join(''));
     }
 
     calcMemory.push(resultat);
@@ -172,25 +187,11 @@ function equalClicked() {
     memoryFirstValue = resultat;
     calcArray = [resultat];
     memorySign = "";
+
+
 }
 
-// maybe i delete these
 
-function divideClicked() {
-    console.log('no function yet');
-}
-
-function multiplyClicked() {
-    console.log('no function yet');
-}
-
-function substractClicked() {
-    console.log('no function yet');
-}
-
-function addClicked() {
-    console.log('no function yet');
-}
 
 function dotClicked() {
     console.log('no function yet');
