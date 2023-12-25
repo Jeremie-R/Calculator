@@ -165,8 +165,15 @@ function backClicked() {
 }
 
 function signClicked() {
-    console.log('no function yet');
-    calcArray = parseInt(calcArray.join('')) * - 1
+    
+    // we need to force a multiply by one
+    let signChanged = parseInt(calcArray.join('')) * -1;
+    calcArray = [signChanged];
+    result.innerHTML = calcArray;
+
+    
+
+
 }
 
 function percentClicked() {
