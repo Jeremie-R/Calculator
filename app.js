@@ -126,6 +126,14 @@ function cancelClicked() {
     result.innerHTML = "";
 }
 
+function dotClicked() {
+    console.log('no function yet');
+}
+
+function backClicked() {
+    console.log('no function yet');
+}
+
 function signClicked() {
     console.log('no function yet');
 }
@@ -199,15 +207,6 @@ function equalClicked() {
 
 }
 
-
-
-function dotClicked() {
-    console.log('no function yet');
-}
-
-function backClicked() {
-    console.log('no function yet');
-}
 
 
 
