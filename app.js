@@ -4,6 +4,7 @@
 let currentThemeValue = "string";
 
 let memoryFirstValue = 0;
+let resultat = 0;
 let memorySign = "";
 let calcMemory = [];
 let calcArray = [];
@@ -152,38 +153,25 @@ function equalClicked() {
 
     calcMemory.push(" = ");
 
-
     if (memorySign === "") {
-
         // no memory sign stored so we store a value to hold
-
-        memoryFirstValue = parseInt(calcArray.join(''));
-        
-        calcMemory.push(memoryFirstValue),
-
-        previousInput.innerHTML = calcMemory.join('');
-
-        // we stored the value so we need to clean our array
-        calcArray = [memoryFirstValue];
-
-
+        resultat = parseInt(calcArray.join(''));
     }
 
     // from here we assume there is a sign stored
 
     if (memorySign === "+") {
-        let resultat = memoryFirstValue + parseInt(calcArray.join(''));
-        
-        calcMemory.push(resultat)
-        result.innerHTML = resultat
-
-        // clean and ready for next
-        memoryFirstValue = resultat;
-        calcArray = [resultat];
-        memorySign = "";
-
-        
+        resultat = memoryFirstValue + parseInt(calcArray.join(''));
     }
+
+    calcMemory.push(resultat);
+    result.innerHTML = resultat;
+    previousInput.innerHTML = calcMemory.join('');
+
+    // clean and ready for next
+    memoryFirstValue = resultat;
+    calcArray = [resultat];
+    memorySign = "";
 }
 
 // maybe i delete these
