@@ -3,9 +3,9 @@
 //vairables
 let currentThemeValue = "string";
 
-let MemoryA = 0;
-let MemoryB = 0
-let calcMemory = "";
+let memoryFirstValue = 0;
+let memorySign = "";
+let calcMemory = [];
 let calcArray = [];
 
 let previousInput = document.getElementById("previousInput");
@@ -85,7 +85,7 @@ let substract = document.getElementById("substract");
 substract.addEventListener('click', () => { substractClicked(); } );
 
 let add = document.getElementById("add");
-add.addEventListener('click', () => { addClicked(); } );
+add.addEventListener('click', () => { operatorClicked("+"); } );
 
 let dot = document.getElementById("dot");
 dot.addEventListener('click', () => { dotClicked(); } );
@@ -105,6 +105,12 @@ equal.addEventListener('click', () => { equalClicked(); } );
 //fuctiion to collect the number that are clicked
 function numberClicked(number) {
     console.log(number);
+    calcArray.push(number);
+    result.innerHTML = calcArray.join('');
+
+    calcMemory.push(number);
+    previousInput.innerHTML = calcMemory.join('');
+
 }
 
 // operator functions
@@ -120,6 +126,67 @@ function signClicked() {
 function percentClicked() {
     console.log('no function yet');
 }
+
+// rework in my mid to try the hold sing in memory idea
+
+function operatorClicked(sign) {
+
+    memorySign = sign;
+    calcMemory.push(" " + sign + " ");
+    previousInput.innerHTML = calcMemory.join('');
+
+    // let store the value up to now and clean array
+    memoryFirstValue = parseInt(calcArray.join(''));
+    console.log(memoryFirstValue);
+    calcArray = [];
+
+    result.innerHTML = sign;
+
+    //should we run equal ?
+    //equalClicked();
+
+
+};
+
+function equalClicked() {
+
+    calcMemory.push(" = ");
+
+
+    if (memorySign === "") {
+
+        // no memory sign stored so we store a value to hold
+
+        memoryFirstValue = parseInt(calcArray.join(''));
+        
+        calcMemory.push(memoryFirstValue),
+
+        previousInput.innerHTML = calcMemory.join('');
+
+        // we stored the value so we need to clean our array
+        calcArray = [memoryFirstValue];
+
+
+    }
+
+    // from here we assume there is a sign stored
+
+    if (memorySign === "+") {
+        let resultat = memoryFirstValue + parseInt(calcArray.join(''));
+        
+        calcMemory.push(resultat)
+        result.innerHTML = resultat
+
+        // clean and ready for next
+        memoryFirstValue = resultat;
+        calcArray = [resultat];
+        memorySign = "";
+
+        
+    }
+}
+
+// maybe i delete these
 
 function divideClicked() {
     console.log('no function yet');
@@ -145,9 +212,7 @@ function backClicked() {
     console.log('no function yet');
 }
 
-function equalClicked() {
-    console.log('no function yet');
-}
+
 
 
 
