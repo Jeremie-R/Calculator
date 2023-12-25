@@ -132,7 +132,22 @@ function dotClicked() {
 }
 
 function backClicked() {
-    console.log('no function yet');
+    
+    if (calcMemory === []) {
+        //do nothing
+    } else {
+        let lastClick = calcMemory.pop();
+
+        let operator = [" + ", " / ", " x ", " - "]
+    
+        if (lastClick === operator ) {
+            memorySign = "";
+        }
+    
+        result.innerHTML = calcArray.join('');
+        previousInput.innerHTML = calcMemory.join('');
+    }
+
 }
 
 function signClicked() {
