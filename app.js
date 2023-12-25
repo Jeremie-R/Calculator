@@ -137,12 +137,14 @@ function backClicked() {
         //do nothing
     } else {
         let lastClick = calcMemory.pop();
-
         let operator = [" + ", " / ", " x ", " - "]
     
         if (lastClick === operator ) {
             memorySign = "";
-        }
+        } else {
+            let lastNumber = calcArray.pop();
+            console.log('bye ' + lastNumber);
+        };
     
         result.innerHTML = calcArray.join('');
         previousInput.innerHTML = calcMemory.join('');
