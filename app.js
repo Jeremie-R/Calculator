@@ -118,6 +118,7 @@ function numberClicked(number) {
 
 function cancelClicked() {
     memoryFirstValue = 0.0;
+    resultat = 0.0;
     memorySign = "";
     calcArray = [];
     calcMemory = [];
@@ -156,11 +157,6 @@ function operatorClicked(sign) {
     calcArray = [];
 
     result.innerHTML = sign;
-
-    //should we run equal ?
-    //equalClicked();
-
-
 };
 
 function equalClicked() {
@@ -181,8 +177,8 @@ function equalClicked() {
     }
     if (memorySign === "/") {   
         if (parseInt(calcArray.join('')) === 0) {
-            alert("divide by zero is not posible");
             cancelClicked();
+            alert("divide by zero is not posible");
         } else {
             let realresult = memoryFirstValue / parseInt(calcArray.join(''));
             realresult = realresult.toFixed(3);
