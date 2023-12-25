@@ -8,6 +8,7 @@ let resultat = 0.0;
 let memorySign = "";
 let calcMemory = [];
 let calcArray = [];
+let lastKeyWasEqual = false;
 
 let previousInput = document.getElementById("previousInput");
 let result = document.getElementById("result");
@@ -109,8 +110,13 @@ function numberClicked(number) {
     calcArray.push(number);
     result.innerHTML = calcArray.join('');
 
+    if (lastKeyWasEqual) {
+        calcMemory.push(" | " + resultat);
+    }
+
     calcMemory.push(number);
     previousInput.innerHTML = calcMemory.join('');
+    lastKeyWasEqual = false;
 
 }
 
@@ -122,6 +128,7 @@ function cancelClicked() {
     memorySign = "";
     calcArray = [];
     calcMemory = [];
+    lastKeyWasEqual = false;
 
     previousInput.innerHTML = "";
     result.innerHTML = "";
@@ -135,19 +142,24 @@ function backClicked() {
     
         let lastClick = calcMemory.pop();
         let operator = [" + ", " / ", " x ", " - "];
-    
-        if (operator.includes(lastClick)) {
-            console.log('was an operator');
-            memorySign = "";
-            calcArray = [memoryFirstValue];
 
+        if (lastKeyWasEqual) {
+            cancelClicked();
         } else {
-            let lastNumber = calcArray.pop();
-            console.log('bye ' + lastNumber);
-        };
+            if (operator.includes(lastClick)) {
+                console.log('was an operator');
+                memorySign = "";
+                calcArray = [memoryFirstValue];
+    
+            } else {
+                let lastNumber = calcArray.pop();
+                console.log('bye ' + lastNumber);
+            };
+        }
     
         result.innerHTML = calcArray.join('');
         previousInput.innerHTML = calcMemory.join('');
+        lastKeyWasEqual = false;
     
 
 }
@@ -174,10 +186,11 @@ function operatorClicked(sign) {
     calcArray = [];
 
     result.innerHTML = sign;
+    lastKeyWasEqual = false;
 };
 
 function equalClicked() {
-
+    lastKeyWasEqual = true;
     calcMemory.push(" = ");
 
     if (memorySign === "") {
