@@ -169,13 +169,15 @@ function equalClicked() {
         if (parseInt(calcArray.join('')) === 0) {
             alert("divide by zero is not posible");
             cancelClicked();
-        } 
-        else {
+        } else {
             let realresult = memoryFirstValue / parseInt(calcArray.join(''));
-            resultat = realresult.toFixed(3);
+            realresult = realresult.toFixed(3);
+            let resultString = realresult.toString();
+            resultString = resultString.replace(/(\.\d*?[1-9])0+$/g, '$1');
+            resultat = parseFloat(resultString);
         }
     }
-    if (memorySign === "+") {
+    if (memorySign === "x") {
         resultat = memoryFirstValue * parseInt(calcArray.join(''));
     }
 
