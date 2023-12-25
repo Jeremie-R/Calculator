@@ -133,14 +133,14 @@ function dotClicked() {
 
 function backClicked() {
     
-    if (calcMemory === []) {
-        //do nothing
-    } else {
         let lastClick = calcMemory.pop();
         let operator = [" + ", " / ", " x ", " - "];
     
         if (operator.includes(lastClick)) {
+            console.log('was an operator');
             memorySign = "";
+            calcArray = [memoryFirstValue];
+
         } else {
             let lastNumber = calcArray.pop();
             console.log('bye ' + lastNumber);
@@ -148,7 +148,7 @@ function backClicked() {
     
         result.innerHTML = calcArray.join('');
         previousInput.innerHTML = calcMemory.join('');
-    }
+    
 
 }
 
