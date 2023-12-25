@@ -137,9 +137,9 @@ function backClicked() {
         //do nothing
     } else {
         let lastClick = calcMemory.pop();
-        let operator = [" + ", " / ", " x ", " - "]
+        let operator = [" + ", " / ", " x ", " - "];
     
-        if (lastClick === operator ) {
+        if (operator.includes(lastClick)) {
             memorySign = "";
         } else {
             let lastNumber = calcArray.pop();
