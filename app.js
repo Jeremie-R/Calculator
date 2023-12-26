@@ -74,9 +74,6 @@ AC.addEventListener('click', () => { cancelClicked(); } );
 let sign = document.getElementById("sign");
 sign.addEventListener('click', () => { signClicked(); } );
 
-let percent = document.getElementById("percent");
-percent.addEventListener('click', () => { percentClicked(); } );
-
 let divide = document.getElementById("divide");
 divide.addEventListener('click', () => { operatorClicked("/"); } );
 
@@ -88,9 +85,6 @@ substract.addEventListener('click', () => { operatorClicked("-"); } );
 
 let add = document.getElementById("add");
 add.addEventListener('click', () => { operatorClicked("+"); } );
-
-let dot = document.getElementById("dot");
-dot.addEventListener('click', () => { dotClicked(); } );
 
 let back = document.getElementById("back");
 back.addEventListener('click', () => { backClicked(); } );
@@ -171,16 +165,14 @@ function signClicked() {
     calcArray = [signChanged];
     result.innerHTML = calcArray;
 
-    //i need to add the operator
+   calcMemory.push(") x (-1) = " + signChanged);
+   calcMemory.unshift("(");
 
-
+    previousInput.innerHTML = calcMemory.join('');
 }
 
-function percentClicked() {
-    console.log('no function yet');
-}
 
-// rework in my mid to try the hold sing in memory idea
+// rework  the hold sing in memory 
 
 function operatorClicked(sign) {
 
