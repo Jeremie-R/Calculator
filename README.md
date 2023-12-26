@@ -1,6 +1,6 @@
 # Vanilla Javascriot Calculator
 
-![demo](https://jeremie-r.github.io/Calculator/assets/demo.png)
+[![demo](https://jeremie-r.github.io/Calculator/assets/demo.png)](https://jeremie-r.github.io/Calculator/index.html)
 
 I made this little project to challenge myself. 
 this calculator can't quite handle decimals yet but that might be a future add on 😉
