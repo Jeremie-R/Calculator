@@ -234,7 +234,28 @@ function equalClicked() {
 }
 
 
+// event listener for keyboard
 
+window.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+    const numberKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    const operatorKeys = ["+", "/", "x", "-"];
+
+    if (numberKeys.includes(key)) {
+        numberClicked(key);
+    }
+    if (operatorKeys.includes(key)) {
+        operatorClicked(key);
+    }
+    if (key === "*") {
+        operatorClicked("x")
+    }
+    if (key === "=" || key === "Enter") {
+        equalClicked();
+    }
+
+});
 
 
 
