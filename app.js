@@ -259,6 +259,12 @@ window.addEventListener("keydown", (event) => {
     if (key === "=" || key === "Enter") {
         equalClicked();
     }
+    if (event.keCyode === 46 || key === "Escape") {
+        cancelClicked();
+    }
+    if (event.keyCode === 8) {
+        backClicked();
+    }
 
 });
 
