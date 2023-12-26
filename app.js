@@ -176,6 +176,11 @@ function signClicked() {
 
 function operatorClicked(sign) {
 
+    let operatorKeys = ["+", "/", "x", "-"]
+    if (operatorKeys.includes(memorySign) ) {
+        equalClicked();
+    }
+
     memorySign = sign;
     calcMemory.push(" " + sign + " ");
     previousInput.innerHTML = calcMemory.join('');
