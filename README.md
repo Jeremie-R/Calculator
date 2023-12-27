@@ -1,4 +1,4 @@
-# Vanilla Javascriot Calculator
+# Vanilla Javascript Calculator
 
 [![demo](https://jeremie-r.github.io/Calculator/assets/demo.png)](https://jeremie-r.github.io/Calculator/index.html)
 
